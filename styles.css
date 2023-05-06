@@ -1,0 +1,487 @@
+* {
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+button {
+    border: 2px solid #008CBA;
+    color: #008CBA;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333333; /* Sets the background color to charcoal black */
+    padding-top: 70px; /* Adds padding at the top equal to the navbar height */
+}
+
+#navbar {
+    position: fixed; /* Fixes the navbar at the top of the page */
+    top: 0; /* Aligns the navbar at the top */
+    width: 100%; /* Makes the navbar extend the full width of the page */
+    background-color: #000000; /* Sets the navbar color to black */
+    height: 70px; /* Increases the height of the navbar */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100; /* Ensures the navbar stays on top of other elements */
+}
+
+#navbar ul {
+    display: flex; /* Aligns the navbar items in a row */
+    list-style: none; /* Removes the bullet points */
+    padding: 0; /* Removes the default padding */
+    align-items: center;
+}
+
+#navbar li {
+    margin: 0 20px; /* Adds a larger gap between the links */
+}
+
+#navbar a {
+    color: #ffd700; /* Sets the text color to gold */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Adds a transition effect */
+}
+
+#navbar li #resume-button {
+    color: white !important;
+}
+
+
+#navbar a:hover {
+    color: #ffffff; /* Changes the link color to white when hovered */
+}
+
+#hero {
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#hero h1 {
+    font-size: 3em; /* Increases the size of the h1 text */
+    color: #ffd700; /* Sets the text color to gold */
+}
+
+#hero p {
+    color: #ffd700; /* Sets the text color to gold */
+}
+
+#cta-button, #resume-button, #navbar #resume-button a button[type="submit"] {
+    background-color: transparent;
+    border: 2px solid #008CBA;
+    color: white;
+    padding: 10px 20px; /* Adjust padding to control button size */
+    line-height: 20px; /* This property aligns text in the middle of the button */
+    height: 50px; /* Set the height of the button to be less than navbar height */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Adds a transition effect */
+    vertical-align: middle; /* Align the button vertically in the middle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+
+#cta-button:hover {
+    transform: scale(1.1); /* Increases the size of the button when hovered */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* Adds a shadow effect */
+}
+
+  
+#resume-button:hover {
+    transform: scale(1.1); /* Increases the size of the button when hovered */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* Adds a shadow effect */
+}
+
+#cta-button:hover, #resume-button:hover, #navbar #resume-button a:hover {
+    box-shadow: inset 0 0 0 9999px rgba(94, 165, 209, 0.621); /* Adds an inset box-shadow on hover */
+  }
+  
+
+#footer {
+    position: fixed; /* Fixes the footer at the bottom of the page */
+    bottom: 0; /* Aligns the footer at the bottom */
+    left: 0; /* Aligns the footer to the left */
+    width: 100%; /* Makes the footer extend the full width of the page */
+    background-color: #000000; /* Sets the footer color to black */
+    height: 60px; /* Sets the height of the footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Ensures the footer stays on top of other elements */
+}
+
+
+#footer ul {
+    display: flex; /* Aligns the footer items in a row */
+    list-style: none; /* Removes the bullet points */
+    padding-top: 30px; /* Increase this value as needed */
+    padding: 0;
+    gap: 20px;
+}
+#footer p {
+  margin: 0;
+}
+
+#footer li {
+    margin: 0 20px; /* Adds a larger gap between the links */
+}
+
+#footer a {
+    color: #ffd700; /* Sets the text color to gold */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Adds a transition effect */
+}
+
+#footer a:hover {
+    color: #ffffff; /* Changes the link color to white when hovered */
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 50px;
+    width: 80px;
+}
+
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure the loading screen is on top of everything else */
+}
+
+#loading-logo {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#footer img {
+    width: 40px;
+    height: 40px;
+    filter: sepia(1) saturate(5) brightness(0.7);
+    transition: all 0.3s ease;
+}
+
+#footer img:hover {
+    filter: brightness(0) invert(1);
+    transform: scale(1.1);
+}
+
+
+
+
+/* about me */
+#about-section {
+	background-color: #333333;
+	padding: 50px;
+    color: #ffd700; /* Sets the text color to gold */
+    margin-bottom: 50px;
+}
+
+
+.about-container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 20px;
+	text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-container h1 {
+	font-size: 3em;
+	margin-bottom: 20px;
+}
+
+.about-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    object-position: bottom; /* add this line */
+  }
+  
+
+
+.icons-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.icons-list li {
+	margin: 0 10px;
+	font-size: 2em;
+	color: #555;
+}
+
+.fab {
+	cursor: pointer;
+	transition: color 0.3s ease;
+}
+
+.fab:hover {
+	color: #008CBA;
+}
+
+
+#about-section h1 {
+    color: #ffd700; /* Sets the text color to gold */
+}
+
+#about-section p {
+    color: #ffffff; /* Sets the text color to white */
+}
+
+.introduction p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.introduction p:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+#about-section {
+    background-color: #2f2f2f;
+    padding-bottom: 50px; /* add 50 pixels of padding to the bottom */
+  }
+  
+
+
+
+.quick-facts {
+    margin-top: 50px;
+    color: #fff;
+  }
+  
+  .quick-facts h2 {
+    margin-bottom: 20px;
+  }
+  
+  .quick-facts table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .quick-facts table td, .quick-facts table th {
+    border: 1px solid #fff;
+    padding: 10px;
+  }
+  
+  .quick-facts table th {
+    background-color: #333;
+    font-weight: normal;
+  }
+  
+  .quick-facts table td {
+    text-align: center;
+  }
+  
+h2 {
+    color: #ffd700;
+}
+
+.gold {
+    color: gold;
+}
+
+
+
+
+/* project */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 2rem 2rem 8rem; /* Added 3rem margin-bottom */
+  }
+  
+  .project {
+    border: 1px solid #ddd; /* Added a border */
+    padding: 1rem; /* Added some padding */
+    background-color: #333; /* Added a background color */
+  }
+  
+  .project img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .project h2 {
+    margin-bottom: 1rem;
+    color: #fff; /* Added text color */
+  }
+  
+  .project p {
+    margin-bottom: 0.5rem; /* Added some margin-bottom */
+    color: #fff;
+  }
+  
+  .project a {
+    color: #ffd700;
+  }
+  .project h2 {
+    font-size: 18px; /* Adjust as needed */
+    color: #ffd700;
+  }
+  
+
+  /* Contact */
+
+  body {
+    color: white;
+  }
+  
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  label {
+    color: white;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #444;
+    color: white;
+  }
+  
+  textarea {
+    height: 10rem;
+    resize: none;
+  }
+
+  button[type="submit"] {
+    color: white;
+    outline: none;
+  }
+  
+  button[type="submit"]:hover {
+    transform: scale(1.1); /* Increases the size of the button when hovered */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* Adds a shadow effect */
+}
+
+button[type="submit"]:hover {
+    box-shadow: inset 0 0 0 9999px rgba(94, 165, 209, 0.621); /* Adds an inset box-shadow on hover */
+}
+
+
+
+
+/* details */
+#contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    color: white;
+  }
+  
+  #contact-details h2 {
+    color: white;
+    text-align: center;
+  }
+  
+  table {
+    width: 50%;
+    margin: 1rem auto;
+    border-collapse: collapse;
+    color: white;
+    align-items: center;
+  }
+  
+  table td, table th {
+    padding: 0.5rem;
+    border: 1px solid white;
+  }
+  
+  table th {
+    text-align: left;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: transparent;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  #contact-details h2 {
+    color: white;
+    text-align: center;
+    width: 80%;
+}
+
+
+#details {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  
+  #contact {
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+  }
+  
+  #footer {
+    margin-top: 2rem;
+    text-align: center;
+  }
+ 
